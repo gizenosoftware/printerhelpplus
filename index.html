@@ -1,348 +1,429 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Scale your business with performance-focused digital marketing." />
-  <title>Northstar — Digital Marketing That Grows</title>
-  <style>
-    :root {
-      --ink: #111827;
-      --muted: #667085;
-      --cream: #fffaf1;
-      --orange: #ff6b35;
-      --yellow: #ffc857;
-      --white: #ffffff;
-      --line: #e8e3d9;
-      --green: #dff5ea;
-      --radius: 22px;
-      --shadow: 0 24px 60px rgba(30, 25, 18, .11);
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--ink);
-      background: var(--cream);
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: inherit; text-decoration: none; }
-    button, input { font: inherit; }
-    .wrap { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PrintWorks Guides — Fix Common Printer Problems Step by Step</title>
+<meta name="description" content="Free, plain-English printer troubleshooting guides. Fix offline printers, paper jams, driver errors and blurry printouts — plus when to call a professional support desk." />
+<link rel="canonical" href="https://www.printworksguides.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="PrintWorks Guides — Fix Common Printer Problems Step by Step" />
+<meta property="og:description" content="Free, plain-English printer troubleshooting guides for home and office users." />
+<meta property="og:url" content="https://www.printworksguides.com/" />
+<meta name="robots" content="index, follow" />
 
-    /* Nav */
-    .nav {
-      height: 84px; display: flex; align-items: center; justify-content: space-between;
-      position: relative; z-index: 20;
-    }
-    .brand { display: flex; align-items: center; gap: 10px; font-weight: 850; font-size: 20px; letter-spacing: -.5px; }
-    .brand-mark { width: 34px; height: 34px; border-radius: 11px; background: var(--orange); display: grid; place-items: center; transform: rotate(-5deg); }
-    .brand-mark svg { transform: rotate(5deg); }
-    .links { display: flex; gap: 34px; align-items: center; font-size: 14px; font-weight: 650; }
-    .links a:not(.nav-cta) { color: #49505c; }
-    .links a:not(.nav-cta):hover { color: var(--orange); }
-    .nav-cta { padding: 12px 19px; color: white; background: var(--ink); border-radius: 999px; transition: transform .2s, background .2s; }
-    .nav-cta:hover { transform: translateY(-2px); background: var(--orange); }
-    .menu-btn { display: none; border: 0; background: none; padding: 8px; cursor: pointer; }
+<style>
+  :root{
+    --ink:#0b1f33; --body:#43596e; --muted:#7b8fa3;
+    --blue:#1366e6; --blue-dark:#0d4fb5; --teal:#0fb5a6;
+    --bg:#f4f8fc; --white:#ffffff; --line:#e1eaf3;
+    --tint:#e8f2ff; --tint2:#e6faf7;
+    --radius:18px;
+    --shadow:0 18px 44px rgba(11,31,51,.09);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased; line-height:1.62;
+  }
+  a{color:var(--blue); text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{width:min(1120px,calc(100% - 40px)); margin-inline:auto}
+  h1,h2,h3{line-height:1.16; letter-spacing:-.02em; margin:0 0 14px}
+  h1{font-size:clamp(2rem,4.6vw,3.35rem); font-weight:850}
+  h2{font-size:clamp(1.4rem,2.6vw,2rem); font-weight:800}
+  h3{font-size:1.08rem; font-weight:750}
+  p{margin:0 0 14px; color:var(--body)}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px; font-size:.76rem; font-weight:750;
+    text-transform:uppercase; letter-spacing:.14em; color:var(--blue);
+    background:var(--tint); padding:7px 14px; border-radius:999px; margin-bottom:18px;
+  }
 
-    /* Hero */
-    .hero { position: relative; overflow: hidden; padding: 66px 0 92px; }
-    .hero:before { content: ""; position: absolute; width: 580px; height: 580px; right: -250px; top: -240px; border-radius: 50%; background: #ffe6ac; opacity: .7; }
-    .hero-grid { display: grid; grid-template-columns: 1.03fr .97fr; gap: 68px; align-items: center; position: relative; }
-    .eyebrow { display: inline-flex; align-items: center; gap: 9px; padding: 8px 12px; background: white; border: 1px solid var(--line); border-radius: 999px; color: #434a55; font-size: 12px; font-weight: 750; text-transform: uppercase; letter-spacing: 1px; }
-    .eyebrow i { width: 8px; height: 8px; border-radius: 50%; background: var(--orange); box-shadow: 0 0 0 4px #ffe4da; }
-    h1 { font-size: clamp(52px, 6.3vw, 82px); line-height: .98; letter-spacing: -4.8px; margin: 24px 0 26px; font-weight: 850; max-width: 720px; }
-    h1 .accent { position: relative; z-index: 1; white-space: nowrap; }
-    h1 .accent:after { content: ""; position: absolute; z-index: -1; left: -4px; right: -7px; bottom: 5px; height: 20px; background: var(--yellow); transform: rotate(-1.5deg); border-radius: 3px; }
-    .lead { max-width: 550px; color: var(--muted); font-size: 18px; line-height: 1.7; margin: 0 0 34px; }
-    .hero-actions { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
-    .primary { border: 0; cursor: pointer; color: white; background: var(--orange); padding: 16px 24px; border-radius: 999px; font-weight: 750; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 9px 22px rgba(255,107,53,.22); transition: transform .2s, box-shadow .2s; }
-    .primary:hover { transform: translateY(-3px); box-shadow: 0 14px 28px rgba(255,107,53,.3); }
-    .text-link { font-size: 14px; font-weight: 750; display: flex; align-items: center; gap: 9px; }
-    .play { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid #d5cfc5; border-radius: 50%; background: white; }
-    .micro { margin-top: 29px; display: flex; gap: 18px; align-items: center; color: #68707c; font-size: 12px; font-weight: 600; }
-    .avatars { display: flex; }
-    .avatar { width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--cream); margin-left: -7px; display: grid; place-items: center; color: white; font-size: 10px; font-weight: 800; }
-    .avatar:first-child { margin-left: 0; background: #3e6b75; }
-    .avatar:nth-child(2) { background: #bd6a43; }
-    .avatar:nth-child(3) { background: #6c5a8b; }
-    .micro strong { color: var(--ink); }
+  /* header */
+  header{
+    position:sticky; top:0; z-index:30; background:rgba(255,255,255,.9);
+    backdrop-filter:blur(10px); border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex; align-items:center; justify-content:space-between; gap:18px; height:74px}
+  .brand{display:flex; align-items:center; gap:10px; font-weight:850; font-size:1.05rem; color:var(--ink); letter-spacing:-.02em}
+  .brand span.mark{
+    width:34px; height:34px; border-radius:10px; display:grid; place-items:center;
+    background:linear-gradient(135deg,var(--blue),var(--teal)); color:#fff;
+  }
+  .nav-links{display:flex; align-items:center; gap:26px; font-size:.94rem; font-weight:600}
+  .nav-links a{color:var(--body)}
+  .nav-links a:hover{color:var(--blue); text-decoration:none}
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:9px;
+    padding:13px 22px; border-radius:12px; font-weight:750; font-size:.95rem;
+    background:var(--blue); color:#fff; border:1px solid var(--blue);
+    box-shadow:0 10px 24px rgba(19,102,230,.24); transition:transform .16s ease, background .16s ease;
+  }
+  .btn:hover{background:var(--blue-dark); text-decoration:none; transform:translateY(-1px)}
+  .btn-ghost{background:#fff; color:var(--ink); border:1px solid var(--line); box-shadow:none}
+  .btn-ghost:hover{background:#f7fafd; color:var(--ink)}
+  @media (max-width:820px){ .nav-links{display:none} }
 
-    /* Dashboard artwork */
-    .visual { position: relative; min-height: 515px; }
-    .blob { position: absolute; inset: 30px 0 0 30px; border-radius: 48% 52% 46% 54% / 45% 45% 55% 55%; background: var(--yellow); transform: rotate(-6deg); }
-    .dashboard { position: absolute; width: 86%; left: 8%; top: 50px; background: white; border: 1px solid rgba(17,24,39,.08); border-radius: 24px; padding: 20px; box-shadow: var(--shadow); transform: rotate(2.5deg); }
-    .dash-head { display: flex; justify-content: space-between; align-items: center; padding-bottom: 17px; border-bottom: 1px solid #eee; }
-    .dash-title { font-weight: 800; font-size: 14px; }
-    .dots { color: #b4b4b4; letter-spacing: 3px; }
-    .metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 17px 0; }
-    .metric { background: #f8f8f6; border-radius: 14px; padding: 15px; }
-    .metric small { font-size: 10px; color: #7b818b; display: block; margin-bottom: 8px; }
-    .metric b { font-size: 22px; letter-spacing: -.7px; }
-    .up { color: #189a63; font-size: 9px; font-weight: 800; margin-left: 4px; }
-    .chart { height: 180px; background: #fffaf0; border-radius: 15px; padding: 17px 12px 8px; position: relative; overflow: hidden; }
-    .chart-label { font-size: 10px; color: #7f7462; margin-left: 8px; }
-    .chart svg { position: absolute; width: calc(100% - 20px); height: 130px; bottom: 5px; left: 10px; }
-    .float-card { position: absolute; border-radius: 15px; background: white; box-shadow: 0 14px 35px rgba(30,25,18,.15); padding: 13px 16px; z-index: 3; animation: float 4s ease-in-out infinite; }
-    .float-card.one { top: 18px; right: -4px; }
-    .float-card.two { bottom: 30px; left: -16px; animation-delay: -2s; }
-    .float-card small { display: block; color: #7b818b; font-size: 9px; margin-bottom: 5px; }
-    .float-card b { font-size: 16px; }
-    .float-card .spark { color: #13a36a; font-size: 10px; margin-left: 6px; }
-    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+  /* hero */
+  .hero{padding:66px 0 54px; position:relative; overflow:hidden}
+  .hero::before{
+    content:""; position:absolute; inset:-140px -10% auto auto; width:620px; height:620px;
+    background:radial-gradient(circle at 50% 50%, rgba(15,181,166,.16), transparent 62%);
+    pointer-events:none;
+  }
+  .hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:48px; align-items:center}
+  .hero p.lead{font-size:1.12rem; max-width:36em}
+  .hero-actions{display:flex; flex-wrap:wrap; gap:12px; margin:26px 0 18px}
+  .trust{display:flex; flex-wrap:wrap; gap:18px; font-size:.86rem; color:var(--muted); font-weight:600}
+  .trust span{display:flex; align-items:center; gap:7px}
+  .hero-card{
+    background:#fff; border:1px solid var(--line); border-radius:ceil(22px); border-radius:22px;
+    padding:24px; box-shadow:var(--shadow);
+  }
+  .hero-card h3{margin-bottom:6px}
+  .hero-card .row{display:flex; align-items:center; gap:11px; padding:11px 0; border-bottom:1px dashed var(--line); font-size:.92rem; color:var(--body); font-weight:600}
+  .hero-card .row:last-of-type{border-bottom:0}
+  .dot{width:26px; height:26px; border-radius:50%; display:grid; place-items:center; background:var(--tint2); color:#07756c; font-size:.72rem; font-weight:800; flex:none}
+  @media (max-width:900px){ .hero-grid{grid-template-columns:1fr; gap:32px} }
 
-    /* Logos */
-    .trusted { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 28px 0; }
-    .trusted-row { display: flex; align-items: center; justify-content: space-between; gap: 28px; }
-    .trusted-label { color: #85817a; font-size: 11px; font-weight: 750; text-transform: uppercase; letter-spacing: 1.3px; max-width: 120px; }
-    .logo-list { display: flex; flex: 1; align-items: center; justify-content: space-around; gap: 25px; color: #777a7b; filter: grayscale(1); }
-    .fake-logo { font-weight: 850; font-size: 18px; letter-spacing: -.6px; display: flex; align-items: center; gap: 7px; }
-    .fake-logo span { width: 17px; height: 17px; background: currentColor; display: inline-block; }
-    .fake-logo:nth-child(2) span { border-radius: 50%; }
-    .fake-logo:nth-child(3) span { transform: rotate(45deg); width: 14px; height: 14px; }
-    .fake-logo:nth-child(4) span { border-radius: 4px 10px 4px 10px; }
+  /* cards */
+  section{padding:56px 0}
+  .sec-head{max-width:44em; margin-bottom:32px}
+  .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+  .card{
+    background:#fff; border:1px solid var(--line); border-radius:var(--radius);
+    padding:24px; transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .card:hover{transform:translateY(-3px); box-shadow:var(--shadow)}
+  .card .ico{
+    width:44px; height:44px; border-radius:12px; display:grid; place-items:center;
+    background:var(--tint); color:var(--blue); margin-bottom:14px;
+  }
+  .card p{font-size:.93rem; margin-bottom:0}
+  .card h3 a{color:var(--ink)}
+  @media (max-width:900px){ .cards{grid-template-columns:1fr 1fr} }
+  @media (max-width:620px){ .cards{grid-template-columns:1fr} }
 
-    /* Services */
-    .services { background: white; padding: 112px 0; }
-    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 48px; }
-    .kicker { color: var(--orange); text-transform: uppercase; letter-spacing: 1.6px; font-size: 11px; font-weight: 850; }
-    h2 { font-size: clamp(35px, 4vw, 52px); line-height: 1.08; letter-spacing: -2.5px; margin: 12px 0 0; max-width: 650px; }
-    .section-head p { color: var(--muted); line-height: 1.65; max-width: 390px; margin: 0; }
-    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .card { border: 1px solid #ebe7df; border-radius: var(--radius); padding: 30px; transition: transform .25s, box-shadow .25s, border-color .25s; }
-    .card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(23,26,33,.08); border-color: transparent; }
-    .icon { width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; margin-bottom: 48px; }
-    .card:nth-child(1) .icon { background: #fff0d4; }
-    .card:nth-child(2) .icon { background: #e4f4ea; }
-    .card:nth-child(3) .icon { background: #eee8ff; }
-    .card h3 { font-size: 21px; margin: 0 0 12px; letter-spacing: -.6px; }
-    .card p { color: var(--muted); line-height: 1.65; font-size: 14px; margin: 0 0 24px; }
-    .learn { font-weight: 750; font-size: 13px; display: inline-flex; gap: 8px; align-items: center; }
-    .learn:hover { color: var(--orange); }
+  /* steps */
+  .steps{background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+  .step-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px; counter-reset:s}
+  .step{position:relative; padding-top:8px}
+  .step .num{
+    width:34px; height:34px; border-radius:50%; background:var(--ink); color:#fff;
+    display:grid; place-items:center; font-weight:800; font-size:.9rem; margin-bottom:12px;
+  }
+  .step p{font-size:.9rem; margin:0}
+  @media (max-width:900px){ .step-grid{grid-template-columns:1fr 1fr} }
+  @media (max-width:560px){ .step-grid{grid-template-columns:1fr} }
 
-    /* CTA */
-    .cta-section { background: white; padding: 0 0 112px; }
-    .cta-box { background: var(--ink); color: white; border-radius: 28px; padding: 65px 70px; display: flex; align-items: center; justify-content: space-between; gap: 50px; overflow: hidden; position: relative; }
-    .cta-box:after { content:""; width: 260px; height: 260px; border: 45px solid rgba(255,200,87,.15); position: absolute; right: -80px; top: -100px; border-radius: 50%; }
-    .cta-box h2 { max-width: 600px; margin: 0 0 12px; font-size: clamp(32px, 4vw, 49px); position: relative; z-index: 1; }
-    .cta-box p { color: #aeb5c0; margin: 0; position: relative; z-index: 1; }
-    .cta-box .primary { flex: 0 0 auto; position: relative; z-index: 2; }
+  /* partner / backlink block */
+  .partner{
+    background:linear-gradient(135deg,#0b1f33,#123c63); color:#fff; border-radius:26px;
+    padding:44px; display:grid; grid-template-columns:1.3fr .7fr; gap:32px; align-items:center;
+    box-shadow:0 30px 70px rgba(11,31,51,.28);
+  }
+  .partner h2{color:#fff; margin-bottom:10px}
+  .partner p{color:#c6d8ea; margin-bottom:0}
+  .partner .btn{background:#fff; color:var(--ink); border-color:#fff; box-shadow:none; white-space:nowrap}
+  .partner .btn:hover{background:#eef4fb}
+  @media (max-width:820px){ .partner{grid-template-columns:1fr; padding:30px} }
 
-    footer { background: var(--ink); color: #aeb5c0; border-top: 1px solid #2f3642; padding: 27px 0; }
-    .foot { display: flex; justify-content: space-between; align-items: center; font-size: 12px; }
-    .foot .brand { color: white; font-size: 16px; }
-    .foot .brand-mark { width: 28px; height: 28px; border-radius: 9px; }
-    .foot-links { display: flex; gap: 22px; }
+  /* list */
+  .list-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:12px 26px 22px}
+  .list-card ul{list-style:none; margin:0; padding:0}
+  .list-card li{display:flex; gap:14px; padding:16px 0; border-bottom:1px solid var(--line)}
+  .list-card li:last-child{border-bottom:0}
+  .list-card li b{display:block; color:var(--ink); font-size:.98rem}
+  .list-card li span{font-size:.9rem; color:var(--body)}
+  .tick{
+    width:22px; height:22px; border-radius:50%; background:var(--tint2); color:#07756c;
+    display:grid; place-items:center; font-size:.72rem; font-weight:900; flex:none; margin-top:3px;
+  }
 
-    /* Modal */
-    .modal { position: fixed; inset: 0; z-index: 100; background: rgba(10,15,24,.65); display: grid; place-items: center; opacity: 0; visibility: hidden; transition: .25s; padding: 20px; }
-    .modal.open { opacity: 1; visibility: visible; }
-    .modal-card { width: min(480px, 100%); background: white; border-radius: 24px; padding: 30px; transform: translateY(18px); transition: .25s; position: relative; }
-    .modal.open .modal-card { transform: translateY(0); }
-    .close { position: absolute; top: 16px; right: 16px; border: 0; background: #f2f2ef; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; }
-    .modal-card h3 { margin: 8px 0 7px; font-size: 28px; letter-spacing: -1px; }
-    .modal-card p { margin: 0 0 22px; color: var(--muted); font-size: 14px; }
-    .form { display: grid; gap: 12px; }
-    .form input { width: 100%; border: 1px solid #ddd9d1; border-radius: 12px; padding: 13px 14px; outline: none; }
-    .form input:focus { border-color: var(--orange); box-shadow: 0 0 0 3px #ffe4da; }
-    .form .primary { justify-content: center; border-radius: 12px; }
+  /* faq */
+  details{
+    background:#fff; border:1px solid var(--line); border-radius:14px; padding:16px 20px;
+    margin-bottom:12px;
+  }
+  details[open]{border-color:#c8dcf5; box-shadow:0 10px 26px rgba(11,31,51,.06)}
+  summary{cursor:pointer; font-weight:750; color:var(--ink); list-style:none; display:flex; justify-content:space-between; gap:16px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+"; color:var(--blue); font-weight:800; font-size:1.2rem; line-height:1}
+  details[open] summary::after{content:"–"}
+  details p{margin:12px 0 0; font-size:.94rem}
 
-    @media (max-width: 900px) {
-      .links { display: none; position: absolute; top: 72px; right: 0; background: white; padding: 18px; border-radius: 16px; box-shadow: var(--shadow); flex-direction: column; align-items: flex-start; min-width: 190px; gap: 18px; }
-      .links.open { display: flex; }
-      .menu-btn { display: block; }
-      .hero { padding-top: 40px; }
-      .hero-grid { grid-template-columns: 1fr; gap: 45px; }
-      .visual { width: min(590px, 100%); margin-inline: auto; }
-      .cards { grid-template-columns: 1fr; }
-      .card { display: grid; grid-template-columns: auto 1fr; column-gap: 22px; }
-      .icon { grid-row: 1 / 4; margin: 0; }
-      .card p { margin-bottom: 12px; }
-      .section-head { align-items: start; flex-direction: column; }
-      .cta-box { padding: 50px 42px; }
-    }
-    @media (max-width: 620px) {
-      .wrap { width: min(100% - 28px, 1160px); }
-      .nav { height: 72px; }
-      .hero { padding: 42px 0 66px; }
-      h1 { font-size: clamp(45px, 15vw, 65px); letter-spacing: -3.5px; }
-      .lead { font-size: 16px; }
-      .visual { min-height: 415px; }
-      .dashboard { width: 92%; left: 4%; top: 37px; padding: 15px; }
-      .chart { height: 150px; }
-      .float-card.one { right: -4px; top: 8px; }
-      .float-card.two { bottom: 8px; left: -2px; }
-      .trusted-row { align-items: flex-start; flex-direction: column; }
-      .trusted-label { max-width: none; }
-      .logo-list { width: 100%; justify-content: space-between; flex-wrap: wrap; }
-      .fake-logo { font-size: 14px; }
-      .services { padding: 78px 0; }
-      .section-head { margin-bottom: 32px; }
-      .card { display: block; }
-      .icon { margin-bottom: 28px; }
-      .cta-section { padding-bottom: 78px; }
-      .cta-box { padding: 42px 28px; align-items: flex-start; flex-direction: column; gap: 28px; }
-      .foot, .foot-links { gap: 16px; }
-      .foot-links a:nth-child(2) { display: none; }
-    }
-  </style>
+  /* footer */
+  footer{background:#081a2b; color:#9fb6cc; padding:52px 0 26px; margin-top:20px}
+  .foot-grid{display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:36px; padding-bottom:30px; border-bottom:1px solid rgba(255,255,255,.1)}
+  footer h4{color:#fff; font-size:.82rem; text-transform:uppercase; letter-spacing:.14em; margin:0 0 14px}
+  footer a{color:#c6d8ea}
+  footer a:hover{color:#fff}
+  footer ul{list-style:none; margin:0; padding:0; font-size:.92rem}
+  footer li{margin-bottom:9px}
+  footer p{color:#9fb6cc; font-size:.92rem}
+  .foot-bottom{display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; padding-top:20px; font-size:.83rem; color:#7f97ae}
+  @media (max-width:820px){ .foot-grid{grid-template-columns:1fr} }
+</style>
 </head>
 <body>
-  <header class="wrap nav">
-    <a class="brand" href="#" aria-label="Northstar home">
-      <span class="brand-mark"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 14.5 8.2 9l3.2 2.8L17 5" stroke="white" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.5 5H17v4.5" stroke="white" stroke-width="2.3" stroke-linecap="round"/></svg></span>
-      northstar
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <span class="mark" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6z"/></svg>
+      </span>
+      PrintWorks Guides
     </a>
-    <nav class="links" id="navLinks" aria-label="Main navigation">
-      <a href="#services">Services</a>
-      <a href="#results">Results</a>
-      <a href="#about">About</a>
-      <a class="nav-cta open-modal" href="#contact">Let's talk</a>
+    <nav class="nav-links">
+      <a href="#fixes">Quick Fixes</a>
+      <a href="printer-offline-fix.html">Guides</a>
+      <a href="#faq">FAQ</a>
+      <a href="about.html">About</a>
+      <a class="btn" href="https://printerhelpplus.com/" target="_blank" rel="noopener">Printer Help Plus</a>
     </nav>
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
-      <svg width="25" height="25" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#111827" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <span class="eyebrow"><i></i> Growth, made simple</span>
-          <h1>Make your brand <span class="accent">impossible</span> to ignore.</h1>
-          <p class="lead">We build data-driven campaigns that turn attention into action—and clicks into loyal customers.</p>
-          <div class="hero-actions">
-            <button class="primary open-modal">Get a free growth plan <span>→</span></button>
-            <a class="text-link" href="#services"><span class="play">▶</span> See how we work</a>
-          </div>
-          <div class="micro">
-            <div class="avatars" aria-hidden="true"><span class="avatar">AK</span><span class="avatar">JM</span><span class="avatar">RS</span></div>
-            <span>Loved by <strong>120+ growing brands</strong></span>
-          </div>
-        </div>
-
-        <div class="visual" id="results" aria-label="Campaign analytics illustration">
-          <div class="blob"></div>
-          <div class="float-card one"><small>Conversion rate</small><b>8.42%</b><span class="spark">↑ 2.1%</span></div>
-          <div class="dashboard">
-            <div class="dash-head"><span class="dash-title">Campaign overview</span><span class="dots">•••</span></div>
-            <div class="metric-grid">
-              <div class="metric"><small>Total revenue</small><b>$84.2K</b><span class="up">↑ 18%</span></div>
-              <div class="metric"><small>New customers</small><b>1,284</b><span class="up">↑ 24%</span></div>
-            </div>
-            <div class="chart">
-              <div class="chart-label">Growth over the last 6 months</div>
-              <svg viewBox="0 0 420 130" preserveAspectRatio="none" aria-hidden="true">
-                <defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffb15d" stop-opacity=".45"/><stop offset="1" stop-color="#ffb15d" stop-opacity="0"/></linearGradient></defs>
-                <path d="M0 110 C35 108 44 78 78 85 S126 104 158 70 S209 78 242 55 S290 65 325 32 S375 40 420 8 L420 130 L0 130Z" fill="url(#fill)"/>
-                <path d="M0 110 C35 108 44 78 78 85 S126 104 158 70 S209 78 242 55 S290 65 325 32 S375 40 420 8" fill="none" stroke="#ff6b35" stroke-width="4" stroke-linecap="round"/>
-                <circle cx="420" cy="8" r="5" fill="#fff" stroke="#ff6b35" stroke-width="4"/>
-              </svg>
-            </div>
-          </div>
-          <div class="float-card two"><small>Return on ad spend</small><b>4.8x</b><span class="spark">Excellent</span></div>
-        </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Printer troubleshooting, minus the jargon</span>
+      <h1>Your printer stopped working. Let’s fix it in ten minutes.</h1>
+      <p class="lead">
+        PrintWorks Guides is a free library of step-by-step printer help written for people who
+        just need the document on paper — offline errors, paper jams, faded ink, driver conflicts
+        and the dreaded “Printer is not responding” message.
+      </p>
+      <div class="hero-actions">
+        <a class="btn" href="#fixes">Start with the basics</a>
+        <a class="btn btn-ghost" href="https://printerhelpplus.com/" target="_blank" rel="noopener">Talk to a print specialist</a>
       </div>
-    </section>
-
-    <section class="trusted" aria-label="Trusted brands">
-      <div class="wrap trusted-row">
-        <div class="trusted-label">Trusted by teams at</div>
-        <div class="logo-list">
-          <div class="fake-logo"><span></span>Vertex</div>
-          <div class="fake-logo"><span></span>pulse</div>
-          <div class="fake-logo"><span></span>Northco</div>
-          <div class="fake-logo"><span></span>Bloom</div>
-        </div>
+      <div class="trust">
+        <span>✓ No sign-up</span>
+        <span>✓ Works for HP, Canon, Epson, Brother</span>
+        <span>✓ Updated November 2026</span>
       </div>
-    </section>
-
-    <section class="services" id="services">
-      <div class="wrap">
-        <div class="section-head">
-          <div><span class="kicker">What we do</span><h2>Everything you need to grow online.</h2></div>
-          <p>No fluff. No vanity metrics. Just smart strategy, standout creative, and campaigns built to perform.</p>
-        </div>
-        <div class="cards">
-          <article class="card">
-            <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#d76a20" stroke-width="2"/><path d="m16.2 16.2 4 4M8 11h6M11 8v6" stroke="#d76a20" stroke-width="2" stroke-linecap="round"/></svg></div>
-            <h3>Search & SEO</h3>
-            <p>Get found by the people already looking for what you do, with search strategies that compound.</p>
-            <a class="learn" href="#contact">Explore service <span>→</span></a>
-          </article>
-          <article class="card">
-            <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 18V9m7 9V5m7 13v-6" stroke="#25845b" stroke-width="2.2" stroke-linecap="round"/><path d="M3 20h18" stroke="#25845b" stroke-width="2" stroke-linecap="round"/></svg></div>
-            <h3>Paid Media</h3>
-            <p>Turn ad spend into predictable growth through focused targeting, testing, and optimization.</p>
-            <a class="learn" href="#contact">Explore service <span>→</span></a>
-          </article>
-          <article class="card">
-            <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3 14.2 8.3 20 9l-4.3 3.8 1.3 5.7-5-3-5 3 1.3-5.7L4 9l5.8-.7L12 3Z" stroke="#7558b4" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
-            <h3>Content & Social</h3>
-            <p>Build a brand people remember with useful content and thumb-stopping social creative.</p>
-            <a class="learn" href="#contact">Explore service <span>→</span></a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta-section" id="about">
-      <div class="wrap cta-box">
-        <div><h2>Ready to turn marketing into momentum?</h2><p>Book a free 30-minute strategy call. No pressure, just possibilities.</p></div>
-        <button class="primary open-modal">Start growing today <span>→</span></button>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap foot">
-      <a class="brand" href="#"><span class="brand-mark"><svg width="15" height="15" viewBox="0 0 20 20" fill="none"><path d="M3 14.5 8.2 9l3.2 2.8L17 5" stroke="white" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>northstar</a>
-      <span>© 2026 Northstar Studio</span>
-      <div class="foot-links"><a href="#">Privacy</a><a href="#">LinkedIn</a></div>
     </div>
-  </footer>
 
-  <div class="modal" id="contact" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal-card">
-      <button class="close" id="closeModal" aria-label="Close">✕</button>
-      <span class="kicker">Let's grow</span>
-      <h3 id="modalTitle">Get your free growth plan</h3>
-      <p>Tell us where to send it. We’ll be in touch within one business day.</p>
-      <form class="form" id="leadForm">
-        <input type="text" placeholder="Your name" aria-label="Your name" required />
-        <input type="email" placeholder="Work email" aria-label="Work email" required />
-        <input type="url" placeholder="Website (optional)" aria-label="Website" />
-        <button class="primary" type="submit">Request my growth plan →</button>
-      </form>
+    <aside class="hero-card">
+      <h3>60-second triage</h3>
+      <p style="font-size:.9rem; margin-bottom:8px">Run these four checks before anything else.</p>
+      <div class="row"><span class="dot">1</span> Is the printer’s power light solid, not blinking?</div>
+      <div class="row"><span class="dot">2</span> Does the same cable or Wi-Fi connect the PC and printer?</div>
+      <div class="row"><span class="dot">3</span> Is the correct printer selected, not “Microsoft Print to PDF”?</div>
+      <div class="row"><span class="dot">4</span> Is there paper in the tray and no blinking warning icon?</div>
+    </aside>
+  </div>
+</section>
+
+<!-- QUICK FIXES -->
+<section id="fixes">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>The six problems behind nine out of ten print failures</h2>
+      <p>Each card explains the fastest safe fix, what to check next if it doesn’t work, and when it’s a hardware issue worth escalating.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v10"/><path d="m8 9 4 4 4-4"/><path d="M4 17h16"/></svg></div>
+        <h3><a href="printer-offline-fix.html">Printer shows “offline”</a></h3>
+        <p>Almost always a network or spooler issue rather than a dead printer. Restart the print spooler, then re-add the queue.</p>
+      </article>
+
+      <article class="card">
+        <div class="ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg></div>
+        <h3>Jobs stuck in the queue</h3>
+        <p>One corrupted job blocks everything behind it. Clear the queue completely, then send a one-page test document.</p>
+      </article>
+
+      <article class="card">
+        <div class="ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15V9a7 7 0 0 1 14 0"/><path d="M4 15h3v5H5a1 1 0 0 1-1-1z"/><path d="M20 15h-3v5h2a1 1 0 0 0 1-1z"/></svg></div>
+        <h3>Printer not responding</h3>
+        <p>Check the port first (USB001 vs a stale TCP/IP port), then update or clean-reinstall the driver package.</p>
+      </article>
+
+      <article class="card">
+        <div class="ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8l2 6H6z"/><path d="M6 9h12v8H6z"/><path d="M9 17h6v4H9z"/></svg></div>
+        <h3>Paper jams and misfeeds</h3>
+        <p>Most jams come from over-filled trays or worn pickup rollers. Remove paper in the direction of travel, never backwards.</p>
+      </article>
+
+      <article class="card">
+        <div class="ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20 20 4"/><path d="M14 4h6v6"/><path d="M4 8v12h12"/></svg></div>
+        <h3>Streaky or faded prints</h3>
+        <p>Run the built-in cleaning cycle twice before buying anything. If streaks persist, check toner level and drum life.</p>
+      </article>
+
+      <article class="card">
+        <div class="ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><path d="M12 16h.01"/></svg></div>
+        <h3>Error codes you’ve never seen</h3>
+        <p>Search the exact code with your model number. Codes are model-specific — the same digits mean different things per series.</p>
+      </article>
     </div>
   </div>
+</section>
 
-  <script>
-    const modal = document.getElementById('contact');
-    const closeModal = () => { modal.classList.remove('open'); document.body.style.overflow = ''; };
-    document.querySelectorAll('.open-modal').forEach(el => el.addEventListener('click', e => {
-      e.preventDefault(); modal.classList.add('open'); document.body.style.overflow = 'hidden';
-      setTimeout(() => modal.querySelector('input').focus(), 250);
-    }));
-    document.getElementById('closeModal').addEventListener('click', closeModal);
-    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+<!-- STEPS -->
+<section class="steps">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>A repeatable way to troubleshoot any printer</h2>
+      <p>Work top to bottom. Skipping the boring steps is how people end up reinstalling Windows drivers that were never broken.</p>
+    </div>
+    <div class="step-grid">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Isolate the layer</h3>
+        <p>Power and panel first, then the connection, then the driver, then the software you’re printing from. One layer at a time.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Test with one document</h3>
+        <p>A single-page test print from a plain text file tells you far more than retrying a 40-page PDF export.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Change one thing</h3>
+        <p>Two changes at once means you never learn which one fixed it — or which one broke something else.</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h3>Know when to escalate</h3>
+        <p>Repeated hardware errors, grinding noises or a fuser fault aren’t user-fixable. Stop before you make it worse.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    const menuBtn = document.getElementById('menuBtn');
-    const navLinks = document.getElementById('navLinks');
-    menuBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', navLinks.classList.contains('open'));
-    });
-    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+<!-- PARTNER / BACKLINK -->
+<section>
+  <div class="wrap">
+    <div class="partner">
+      <div>
+        <span class="eyebrow" style="background:rgba(255,255,255,.12); color:#9fe3dc">When self-help runs out</span>
+        <h2>Some print problems need a human on the line</h2>
+        <p>
+          Driver-level faults, network printers that refuse to join a domain, and
+          hardware warnings on business-class machines are better handled by a
+          specialist. For remote diagnosis and guided repairs, the team at
+          <a href="https://printerhelpplus.com/" target="_blank" rel="noopener" style="color:#fff; text-decoration:underline; font-weight:700">Printer Help Plus</a>
+          supports printer setup, driver installation and troubleshooting over the phone and online.
+        </p>
+      </div>
+      <a class="btn" href="https://printerhelpplus.com/" target="_blank" rel="noopener">Visit Printer Help Plus →</a>
+    </div>
+  </div>
+</section>
 
-    document.getElementById('leadForm').addEventListener('submit', e => {
-      e.preventDefault();
-      e.currentTarget.innerHTML = '<div style="padding:28px 10px;text-align:center"><div style="font-size:38px;margin-bottom:10px">✓</div><strong style="font-size:20px">You’re all set!</strong><p style="margin-top:8px">We’ll be in touch shortly.</p></div>';
-      setTimeout(closeModal, 2200);
-    });
-  </script>
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a55bfa91f8ed99d7',t:'MTc5Mzg4Mjk2OQ=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a55bfa91f8ed99d7',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"1954b47c125f43f8b4338b3c4f804e4f","spa":2}' crossorigin="anonymous"></script>
+<!-- POPULAR GUIDES -->
+<section style="padding-top:0">
+  <div class="wrap" style="display:grid; grid-template-columns:1fr 1fr; gap:36px; align-items:start">
+    <div>
+      <h2>What we cover most</h2>
+      <p>Guides are written from real support tickets and checked against current manufacturer documentation for HP, Canon, Epson and Brother home and office models.</p>
+      <ul style="list-style:none; padding:0; margin:18px 0 0; font-weight:650; font-size:.96rem">
+        <li style="padding:10px 0; border-bottom:1px solid var(--line)">→ <a href="printer-offline-fix.html">Printer offline: the complete fix</a></li>
+        <li style="padding:10px 0; border-bottom:1px solid var(--line)">→ Clearing a stuck print queue safely</li>
+        <li style="padding:10px 0; border-bottom:1px solid var(--line)">→ Connecting a wireless printer to a new router</li>
+        <li style="padding:10px 0">→ Choosing between inkjet and laser for a small office</li>
+      </ul>
+    </div>
+
+    <div class="list-card">
+      <ul>
+        <li>
+          <span class="tick" aria-hidden="true">✓</span>
+          <div><b>Written for non-technical readers</b><span>No registry editing in step one. Every guide starts with the simplest reversible action.</span></div>
+        </li>
+        <li>
+          <span class="tick" aria-hidden="true">✓</span>
+          <div><b>Safety first</b><span>We flag anything that voids a warranty or risks damaging the fuser before you do it.</span></div>
+        </li>
+        <li>
+          <span class="tick" aria-hidden="true">✓</span>
+          <div><b>Free, no account needed</b><span>Guides stay open. If a repair is beyond DIY, we point you to professional support.</span></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="padding-top:0">
+  <div class="wrap" style="max-width:820px">
+    <h2 style="text-align:center; margin-bottom:26px">Frequently asked</h2>
+
+    <details open>
+      <summary>Why does my printer say offline when it’s switched on?</summary>
+      <p>“Offline” usually means the computer has lost the print queue, not the printer. Windows and macOS keep a cached queue that can go stale after a router reboot or an IP address change. Restarting the print spooler service and re-adding the printer fixes most cases.</p>
+    </details>
+    <details>
+      <summary>Do I need to install the manufacturer’s full software package?</summary>
+      <p>Not always. For basic printing, the driver-only download is smaller and less intrusive than the full suite. Install the full package only if you need scanning, fax or maintenance tools.</p>
+    </details>
+    <details>
+      <summary>My prints come out blank. Is the printer dead?</summary>
+      <p>Rarely. Check for a protective tape strip still on a new cartridge, then run two cleaning cycles. On laser printers, a blank page often points to a drum or transfer issue rather than a failed machine.</p>
+    </details>
+    <details>
+      <summary>Can a printer be repaired remotely?</summary>
+      <p>Software and network faults can absolutely be fixed remotely. Mechanical problems — jams, fuser faults, feed roller wear — need a technician or a replacement unit. A good support desk will tell you which category you’re in before charging you.</p>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand" style="color:#fff; margin-bottom:12px">
+          <span class="mark" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6z"/></svg>
+          </span>
+          PrintWorks Guides
+        </div>
+        <p>Independent, plain-English printer troubleshooting guides for home users and small offices. We are not affiliated with HP, Canon, Epson or Brother.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="printer-offline-fix.html">Printer offline fix</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="about.html">About &amp; contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Recommended</h4>
+        <ul>
+          <li><a href="https://printerhelpplus.com/" target="_blank" rel="noopener">Printer Help Plus</a></li>
+          <li><a href="https://printerhelpplus.com/" target="_blank" rel="noopener">Printer setup support</a></li>
+          <li><a href="https://printerhelpplus.com/" target="_blank" rel="noopener">Driver installation help</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 PrintWorks Guides. All rights reserved.</span>
+      <span>Troubleshooting information is provided for general guidance only.</span>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "PrintWorks Guides",
+  "url": "https://www.printworksguides.com/",
+  "description": "Free printer troubleshooting guides for home and office users.",
+  "publisher": { "@type": "Organization", "name": "PrintWorks Guides" }
+}
+</script>
 </body>
 </html>
